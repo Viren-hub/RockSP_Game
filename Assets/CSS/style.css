@@ -1,0 +1,268 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: #89C15E;
+    max-width: 1920px;
+    margin: auto;
+}
+
+/* ===== score section ======= */
+.score-card{
+    height: 20vh;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.scrore{
+    width: 70%;
+    height: 15vh;
+    border: 1.5px solid #fff;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.score-title{
+    width: 60%;
+    color: #fff;
+    
+}
+.score-section{
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+}
+.computer-score{
+    width: 45%;
+    text-align: center;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px 0px;
+}
+.your-score{
+    width: 50%;
+    text-align: center;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px 0px;
+}
+
+/* ===== Game section ======= */
+.main-game{
+    height: 70vh;
+    width: 90%;
+    margin: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game{
+    width: 60%;
+    height: 50vh;
+}
+.game-hide{
+    display: none;
+}
+.top{
+    height: 25vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.top .icon-one{
+    width: 160px;
+    height: 160px;
+    background-color: green;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 15px solid #0074B6;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top .icon-two{
+    width: 160px;
+    height: 160px;
+    background-color: #fff;
+    border: 15px solid #BD00FF;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bottom .icon-three{
+    width: 160px;
+    height: 160px;
+    background-color: green;
+    border-radius: 50%;background-color: #fff;
+    border: 15px solid #FFA943;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.bottom{
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.game-result{
+    width: 60%;
+    height: 50vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    display: none;
+}
+.game-result-show{
+    display: inherit;
+}
+
+.result-left{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.result-centre{
+    width: 30%;
+    text-align: center;
+    color: #fff;
+}
+.result-centre button{
+    padding: 5px 15px;
+    border-radius: 5px;
+    background: #fff;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    transition: 0.1s ease;
+    margin-top: 15px;
+    
+}
+.result-centre button:hover{
+    background-color: #89C15E;
+    border: 1px solid #fff;
+    color: #fff;
+}
+.result-right{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.user-choice{
+    width: 160px;
+    height: 160px;
+    background-color: green;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 15px solid #0074B6;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pc-choice{
+    width: 160px;
+    height: 160px;
+    background-color: green;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 15px solid #0074B6;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ===== Rules section ======= */
+.rules{
+    height: 10vh;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: relative;
+}
+.rules button{
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.1s ease;
+    margin-right:15px ;
+}
+.rules button:hover{
+    background-color: #628d42;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.next-button{
+    display: none;
+}
+.show-next-button{
+    display: block;
+}
+.rules-board{
+    width: 25%;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border: 6px solid #fff;
+    background-color: #004429;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 30px;
+}
+.rules-board h3{
+    text-align: center;
+    padding: 10px 0px;
+}
+.rules-board li{
+    padding: 7px 0px;
+}
+.hide-rules{
+    display: none;
+}
+
+/* =========== Media Quries =========== */
+@media screen and (max-width: 600px) {
+    .scrore{
+        width: 100%;
+    }
+    .score-title{
+        width: 40%;
+    }
+    .score-section{
+        width: 60%;
+    }
+    .computer-score{
+        width: 45%;
+    }
+    .your-score{
+        width: 45%;
+    }
+    .rules-board{
+        width: 90%;
+    }
+    .game {
+        width: 100%;
+    }
+    .top{
+        height: 20vh;
+    }
+  }
