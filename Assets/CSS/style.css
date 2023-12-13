@@ -57,7 +57,7 @@ body{
 
 /* ===== Game section ======= */
 .main-game{
-    height: 70vh;
+    min-height: 70vh;
     width: 90%;
     margin: auto;
     position: relative;
@@ -131,7 +131,8 @@ body{
 }
 
 .result-left{
-    width: 30%;
+    width: 130px;
+    height: 130px;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -158,7 +159,8 @@ body{
     color: #fff;
 }
 .result-right{
-    width: 30%;
+    width: 130px;
+    height: 130px;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -247,11 +249,17 @@ body{
     .score-title{
         width: 40%;
     }
+    .main-game{
+        min-height: 70vh;
+    }
     .score-section{
         width: 60%;
     }
     .computer-score{
         width: 45%;
+    }
+    .game-result{
+        width: 100%;
     }
     .your-score{
         width: 45%;

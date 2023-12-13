@@ -4,6 +4,7 @@ function rulesBoard() {
 }
 
 function playAgain() {
+  
   let element = document.getElementById("game-result");
   element.classList.toggle("hide-rules");
   let game = document.getElementById("game");
