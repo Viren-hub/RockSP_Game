@@ -9,6 +9,7 @@
 </head>
 <body class="HURRAY">
     <div class="container">
+        <audio src="./Assets/Images/won.mp3" id="my_audio"  autoplay="autoplay"></audio>
         <div class="hurray-image">
             <img src="./Assets/Images/CUP.png" alt="">
         </div>
@@ -24,6 +25,12 @@
         <button onclick="showRules()">RULES</button>
         <button class="next-button" id="next-button">NEXT</button>
     </div>
-    <script src="./Assets/JS/Script.js"></script>
+ 
+    <script type="text/javascript">
+        window.onload=function(){
+            document.getElementById("my_audio").play();
+          }
+        </script>
+           <script src="./Assets/JS/Script.js"></script>
 </body>
 </html>

@@ -124,7 +124,7 @@ body{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    display: none;
+    /* display: none; */
 }
 .game-result-show{
     display: inherit;
