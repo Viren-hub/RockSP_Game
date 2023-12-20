@@ -3,6 +3,7 @@ let userScore = parseInt(localStorage.getItem('humanScore')) || 0;
 let computerScore = parseInt(localStorage.getItem('computerScore')) || 0;
 let computerChooseImages = ''
 let userChooseImage = ''
+let resultShow = ''
 
 function play(playerChoice) {
   userChooseImage = playerChoice;
@@ -11,23 +12,29 @@ function play(playerChoice) {
   computerChooseImages = computerChoice ;
   switch(userChooseImage) {
     case 'rock':
-      userChooseImage = './Assets/Images/icon-3.png'
+      userChooseImage = {img:'./Assets/Images/icon-3.png',
+                        borderColor:'15px solid #0074B6'}
       break;
     case 'paper':
-      userChooseImage = './Assets/Images/icon-1.png'
+      userChooseImage = {img:'./Assets/Images/icon-1.png',
+                        borderColor:' 15px solid #FFA943'}
       break;
     default:
-      userChooseImage = './Assets/Images/icon-2.png'
+      userChooseImage = {img:'./Assets/Images/icon-2.png',
+                        borderColor:' 15px solid #BD00FF'}
   }
   switch(computerChooseImages) {
     case 'rock':
-      computerChooseImages = './Assets/Images/icon-3.png'
+      computerChooseImages = {img:'./Assets/Images/icon-3.png',
+                              borderColor:'15px solid #0074B6'}
       break;
     case 'paper':
-      computerChooseImages = './Assets/Images/icon-1.png'
+      computerChooseImages = {img:'./Assets/Images/icon-1.png',
+                               borderColor:' 15px solid #FFA943'}
       break;
     default:
-      computerChooseImages = './Assets/Images/icon-2.png'
+      computerChooseImages = {img:'./Assets/Images/icon-2.png',
+                              borderColor:' 15px solid #BD00FF'}
   }
 
   displayResult(playerChoice, computerChoice);
@@ -44,8 +51,7 @@ function displayResult(playerChoice, computerChoice) {
   document.getElementById('next-button').style.display = 'none'
 
   if (playerChoice === computerChoice) {
-    alert('Its TIEUP');
-    
+    resultShow = 'TIE UP'
   } else if (
     (playerChoice === 'rock' && computerChoice === 'scissors') ||
     (playerChoice === 'paper' && computerChoice === 'rock') ||
@@ -53,29 +59,36 @@ function displayResult(playerChoice, computerChoice) {
     
   ) {
     userScore = userScore + 1;
-    alert('You win!');
+    resultShow= 'YOU WIN'
   } else {
-    alert('You Lost!');
+    resultShow = 'YOU LOST'
     computerScore = computerScore + 1;
   }
   if(userScore>computerScore){
     document.getElementById('next-button').style.display = 'inline'
   }
 }
+
 function showResult(userImag, computerImg){
   document.getElementById('game').style.display = 'none';
   document.getElementById('resultElement').style.display = 'flex';
-  document.getElementById('userimg').src=userImag;
-  document.getElementById('computerImg').src=computerImg;
+  document.getElementById('userimg').src=userImag.img;
+  document.getElementById('user-choice').style.border = userImag.borderColor;
+  document.getElementById('pc-choice').style.border = computerImg.borderColor;
+  document.getElementById('computerImg').src=computerImg.img;
+  document.getElementById('resultShow').innerHTML=resultShow;
   
 }
+
 function showRules() {
   document.getElementById('rules-board').style.display = 'inline';
 }
+
 function playAgain(){
   document.getElementById('game').style.display = 'inline';
   document.getElementById('resultElement').style.display = 'none';
 }
+
 function closeRules() {
   document.getElementById('rules-board').style.display = 'none';
 }

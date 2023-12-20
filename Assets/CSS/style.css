@@ -166,10 +166,8 @@ body{
 .user-choice{
     width: 160px;
     height: 160px;
-    background-color: green;
     border-radius: 50%;
     background-color: #fff;
-    border: 15px solid #0074B6;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -214,9 +212,7 @@ body{
 .next-button{
     display: none;
 }
-.show-next-button{
-    display: block;
-}
+
 .rules-board{
     width: 25%;
     position: absolute;
@@ -293,6 +289,9 @@ body{
     }
     .top{
         height: 20vh;
+    }
+    .game-result{
+        width: 100%;
     }
   }
   /* ================= HURRAY Page =============== */
