@@ -124,7 +124,7 @@ body{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    /* display: none; */
+    display: none;
 }
 .game-result-show{
     display: inherit;
@@ -230,11 +230,19 @@ body{
     display: none;
 }
 .rules-board span{
-    position: relative;
-    width: 100%;
-    right: -100%;
-    top: 10px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: -6%;
+    top: -20px;
     cursor: pointer;
+    background: #FF0000;
+    border: 2px solid #fff;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .rules-board h3{
     text-align: center;
