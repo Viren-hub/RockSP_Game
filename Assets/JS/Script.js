@@ -3,10 +3,9 @@ function rulesBoard() {
   element.classList.toggle("hide-rules");
 }
 
-function playAgain() {
-  
+function playAgain() {  
   let element = document.getElementById("game-result");
-  element.classList.toggle("hide-rules");
+  element.classList.add("hide-rules");
   let game = document.getElementById("game");
   game.classList.remove("game-hide");
 }
@@ -22,8 +21,6 @@ function userSelected(e) {
   let pcSelected = choices[Math.floor(Math.random() * 3)];
 
   let result = ''
-  let UserScore = '0';
-  let PcScore = '0';
 
   if (user === pcSelected) {
     result = 'TIE UP';
