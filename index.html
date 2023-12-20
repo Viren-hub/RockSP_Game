@@ -19,32 +19,33 @@
             <div class="score-section">
                 <div class="computer-score">
                     <p>COMPUTER <br>SCORE   </p>
-                    <h1>0</h1>
+                    <h1 id="computer-score">0</h1>
                 </div>
                 <div class="your-score">
                     <p>YOUR <br> SCORE</p>
-                    <h1>0</h1>
+                    <h1 id="human-score">0</h1>
                 </div>
             </div>
         </div>
     </div>
     <div class="main-game">
         <div class="game " id="game">
+            
             <div class="top">
-                <div class="icon-one" onclick="userSelected('rock')">
+                <div class="icon-one" onclick="play('rock')">
                     <img src="./Assets/Images/icon-3.png" alt="">
                 </div>
-                <div class="icon-two" onclick="userSelected('scissors')">
+                <div class="icon-two" onclick="play('scissors')">
                     <img src="./Assets/Images/icon-2.png" alt="">
                 </div>
             </div>
             <div class="bottom">
-                <div class="icon-three" onclick="userSelected('paper')">
+                <div class="icon-three" onclick="play('paper')">
                     <img src="./Assets/Images/icon-1.png" alt="">
                 </div>
             </div>  
         </div>
-        <div class="game-result" id="game-result">
+        <!-- <div class="game-result" id="resultElement">
             <div class="result-left">
                 <div class="user-choice" id="user-choice">
                     <img src="./Assets/Images/icon-1.png" alt="">
@@ -60,9 +61,10 @@
                     <img src="./Assets/Images/icon-1.png" alt="">
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="rules-board" id="rules-board">
+            <span onclick="closeRules()">X</span>
             <h3>Game Rules</h3>
             <ul type="square">
                 <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
@@ -72,9 +74,11 @@
             </ul>
         </div>
     </div>
-    <div class="rules">
-        <button onclick="rulesBoard()">RULES</button>
-        <button class="next-button" id="next-button">NEXT</button>
+    <div class="rules-popup">
+        
+        <button onclick="showRules()">RULES</button>
+        <a class="next-button" id="next-button" onclick="checkresult()" href="./HURRAY.html">NEXT</a>
+        
     </div>
     <script src="./Assets/JS/Script.js"></script>
 </body>

@@ -1,40 +1,53 @@
-function rulesBoard() {
-  let element = document.getElementById("rules-board");
-  element.classList.toggle("hide-rules");
+
+let humanScore = parseInt(localStorage.getItem('humanScore')) || 0;
+let computerScore = parseInt(localStorage.getItem('computerScore')) || 0;
+
+function play(playerChoice) {
+  const choices = ['rock', 'paper', 'scissors'];
+  const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+  displayResult(playerChoice, computerChoice);
+
+  // Update scores
+  document.getElementById('human-score').textContent = humanScore;
+  document.getElementById('computer-score').textContent = computerScore;
+
+  // Save scores to local storage
+  localStorage.setItem('humanScore', humanScore);
+  localStorage.setItem('computerScore', computerScore);
 }
 
-function playAgain() {  
-  let element = document.getElementById("game-result");
-  element.classList.add("hide-rules");
-  let game = document.getElementById("game");
-  game.classList.remove("game-hide");
-}
+function displayResult(playerChoice, computerChoice) {
+  // const resultElement = document.getElementById('resultElement');
+  const game = document.getElementById('game');
+  document.getElementById('next-button').style.display = 'none'
+  // resultElement.style.display = 'none';
 
-function userSelected(e) {
-  let element = document.getElementById("game");
-  element.classList.add("game-hide");
-  let gameResultDiv = document.getElementById("game-result");
-  gameResultDiv.classList.add('game-result-show');
-  let user = e;
-
-  let choices = ['rock', 'paper', 'scissors'];
-  let pcSelected = choices[Math.floor(Math.random() * 3)];
-
-  let result = ''
-
-  if (user === pcSelected) {
-    result = 'TIE UP';
+  if (playerChoice === computerChoice) {
+    alert('Its TIEUP');
+    
   } else if (
-    (user === 'rock' && pcSelected === 'scissors') ||
-    (user === 'paper' && pcSelected === 'rock') ||
-    (user === 'scissors' && pcSelected === 'paper')
+    (playerChoice === 'rock' && computerChoice === 'scissors') ||
+    (playerChoice === 'paper' && computerChoice === 'rock') ||
+    (playerChoice === 'scissors' && computerChoice === 'paper')
+    
   ) {
-
-    result = 'YOU WIN';
+    humanScore = humanScore + 1;
+    alert('You win!');
   } else {
-    result = 'YOU LOST';
+    alert('You Lost!');
+    computerScore = computerScore + 1;
   }
-  document.getElementById('resultShow').innerHTML = result;
+  if(humanScore>computerScore){
+    document.getElementById('next-button').style.display = 'inline'
+  }
 }
 
+function showRules() {
+  document.getElementById('rules-board').style.display = 'inline';
+}
+
+function closeRules() {
+  document.getElementById('rules-board').style.display = 'none';
+}
 

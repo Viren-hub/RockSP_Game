@@ -57,7 +57,7 @@ body{
 
 /* ===== Game section ======= */
 .main-game{
-    min-height: 70vh;
+    height: 70vh;
     width: 90%;
     margin: auto;
     position: relative;
@@ -90,7 +90,6 @@ body{
     justify-content: center;
     align-items: center;
 }
-
 .top .icon-two{
     width: 160px;
     height: 160px;
@@ -132,8 +131,7 @@ body{
 }
 
 .result-left{
-    width: 130px;
-    height: 130px;
+    width: 30%;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -160,8 +158,7 @@ body{
     color: #fff;
 }
 .result-right{
-    width: 130px;
-    height: 130px;
+    width: 30%;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -191,7 +188,7 @@ body{
     align-items: center;
 }
 /* ===== Rules section ======= */
-.rules{
+.rules-popup{
     height: 10vh;
     width: 90%;
     margin: auto;
@@ -200,7 +197,7 @@ body{
     justify-content: flex-end;
     position: relative;
 }
-.rules button{
+.rules-popup button{
     padding: 5px 15px;
     border-radius: 5px;
     border: 1px solid #fff;
@@ -210,7 +207,7 @@ body{
     transition: 0.1s ease;
     margin-right:15px ;
 }
-.rules button:hover{
+.rules-popup button:hover{
     background-color: #628d42;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
@@ -230,6 +227,14 @@ body{
     color: #fff;
     border-radius: 10px;
     padding: 10px 30px;
+    display: none;
+}
+.rules-board span{
+    position: relative;
+    width: 100%;
+    right: -100%;
+    top: 10px;
+    cursor: pointer;
 }
 .rules-board h3{
     text-align: center;
@@ -241,6 +246,19 @@ body{
 .hide-rules{
     display: none;
 }
+.next-button{
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.1s ease;
+    margin-right:15px ;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
 
 /* =========== Media Quries =========== */
 @media screen and (max-width: 600px) {
@@ -250,17 +268,11 @@ body{
     .score-title{
         width: 40%;
     }
-    .main-game{
-        min-height: 70vh;
-    }
     .score-section{
         width: 60%;
     }
     .computer-score{
         width: 45%;
-    }
-    .game-result{
-        width: 100%;
     }
     .your-score{
         width: 45%;
@@ -274,4 +286,54 @@ body{
     .top{
         height: 20vh;
     }
+  }
+  /* ================= HURRAY Page =============== */
+  .HURRAY{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .HURRAY .container{
+        height: 90vh;
+        width: 80%;
+  }
+  .HURRAY .hurray-image{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../Images/hurray.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center ;
+  }
+  .hurray-message{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+  }
+  .hurray-message h1{
+    padding: 20px 0px;
+  }
+  .hurray-message a{
+    margin-top: 20px;
+    text-decoration: none;
+    padding: 8px 20px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #fff;
+  }
+  .hurray-message a:hover{
+    background-color: #628d42;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   }
