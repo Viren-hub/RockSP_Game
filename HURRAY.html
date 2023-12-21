@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./Assets/CSS/style.css">
 </head>
 <body class="HURRAY">
+    
     <div class="container">
         <audio src="./Assets/Images/won.mp3" id="my_audio"  autoplay="autoplay"></audio>
         <div class="hurray-image">
@@ -25,7 +26,16 @@
         <button onclick="showRules()">RULES</button>
         <button class="next-button" id="next-button">NEXT</button>
     </div>
- 
-           <script src="./Assets/JS/Script.js"></script>
+    <div class="rules-board" id="rules-board">
+        <span onclick="closeRules()">X</span>
+        <h3>Game Rules</h3>
+        <ul type="square">
+            <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+            <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+            <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+            <li>If both players lay down the same hand, each player lays down another hand</li>
+        </ul>
+    </div>
+    <script src="./Assets/JS/Script.js"></script>
 </body>
 </html>
